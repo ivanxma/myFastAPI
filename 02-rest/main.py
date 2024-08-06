@@ -6,14 +6,9 @@ import mysql.connector
 import pandas as pd
 
 
-# Constants
-mydb = globalvar.org
-compartment_id = globalvar.compartment_id
-CONFIG_PROFILE = "DEFAULT"
 
 
 app = FastAPI()
-
 
 myconfig = globalvar.myconfig
 
