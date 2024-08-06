@@ -44,4 +44,5 @@ async def root(mydb: str="employees", mytable: str="employees", myrowcount: int=
     cnx = connectMySQL(myconfig)
     df = query_db(mydb, mytable, myrowcount, cnx)
     cnx.close()
-    return df.to_html(show_dimensions=True);
+    #return df.to_html(show_dimensions=True);
+    return df.to_json(orient="records")
