@@ -22,15 +22,12 @@ def connectMySQL(myconfig):
 # Perform RAG
 def query_db( mydb, mytable, myrowcount, cnx):
 
-    with connectMySQL(myconfig)as db:
-
-        
-        myquery =  """
-        select *
-        from {mydb}.{mytable} a
-        LIMIT {myrowcount} 
-        """.format(mydb=mydb, mytable=mytable, myrowcount=myrowcount)
-        df = pd.read_sql_query(myquery, cnx)
+    myquery =  """
+      select *
+      from {mydb}.{mytable} a
+      LIMIT {myrowcount} 
+    """.format(mydb=mydb, mytable=mytable, myrowcount=myrowcount)
+    df = pd.read_sql_query(myquery, cnx)
     return df
 
 
