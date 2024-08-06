@@ -3,7 +3,7 @@
 #
 To install fastapi
 ```
-pip install fastapi
+pip install "fastapi[standard]"
 ```
 
 To run
